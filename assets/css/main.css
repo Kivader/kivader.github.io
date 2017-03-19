@@ -1,0 +1,1360 @@
+/* Author: Tamas Kivader - codepen: tom the cat */
+
+/* Structure Order */
+/* ------------------------------------------------------------------ */
+/* 1. Global-Presets + Font-loading */
+/* ------------------------------------------------------------------ */
+/* 2. Rules what apply 2 all Pages - header > menu, footer,...*/
+/* ------------------------------------------------------------------ */
+/* 3. Rules what apply 2 all Sections from homepage */
+/* 4. Homepage Layout */
+/* 5. Homepage Detail */
+/* ------------------------------------------------------------------ */
+/* 7. Landing Search Layout */
+/* 8. Landing Search Detail */
+/* ------------------------------------------------------------------ */
+/* 10. Landing contact Layout */
+/* 11. Landing contact Detail */
+/* ------------------------------------------------------------------ */
+/* 10. under construction */
+
+
+/* -------------  1. Global-Presets + Font Loading ------------- */
+/*global Font-loading */
+@import url("https://fonts.googleapis.com/css?family=Cabin|Droid+Sans");
+
+ul, ol {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+* {
+    box-sizing: inherit;
+    /* font smoothing */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* 2. Rules what apply 2 all Pages - header > menu, footer,...*/
+
+/* all sites used to highlight with underline where user is */
+.current {
+    border-bottom: 1px solid #86cd9f;
+}
+
+/*all sites header background color */
+.header {
+    background-color: #111111;
+}
+
+/* all sites header layout */
+/* all sites header-wrapper */
+.header-wrapper {
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* all sites - footer layout */
+.footer {
+    height: auto;
+    background-color: #000000;
+    font-family: 'Cabin', sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 90px 0px 0px 0px;
+    align-items: flex-start;
+}
+
+/* all sites - footer-list */
+
+.footer-list {
+    padding: 0px 40px;
+}
+
+/* all sites - footer > p */
+
+.footer p {
+    height: auto;
+    font-family: 'Cabin', sans-serif;
+    color: #fafafa;
+    width: 100%;
+    text-align: center;
+    padding: 80px 0px 30px 0px;
+}
+
+/* all sites - footer items padding */
+
+.footer-list li {
+    padding-bottom: 20px;
+}
+
+.footer-list li:last-child {
+    padding-bottom: 0px;
+}
+
+/* all sites - footer headline */
+.footer-headline {
+    font-size: 36px;
+    color: #fafafa;
+    text-transform: uppercase;
+}
+
+/* all sites - footer links */
+.footer-link {
+    font-size: 20px;
+    color: #cecece;
+    margin: 10px 0px;
+}
+
+/* all sites menu detail */
+
+.menu {
+    height: 100px;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*  all sites - menu items size */
+.menu-item {
+    width: calc(100%/3);
+    display: flex;
+    align-items: flex-start;
+}
+
+/* All sites - menu links colour */
+.menu a {
+    color: #fafafa;
+    text-transform: uppercase;
+}
+
+/* all sites - menu left = Logo */
+.menu-left {
+    text-align: left;
+}
+
+/* all sites - menu center = navigation */
+.menu-center {
+    text-align: center;
+    justify-content: center;
+}
+
+/* all sites - Navigation links spacing */
+.menu-center a {
+    padding: 0em 1em;
+}
+
+/* all sites - navigation links colour */
+.nav-links:link {
+    color: #fafafa;
+}
+
+/* all sites navigation links hover + footer link hovers and active */
+.nav-links:hover,.footer-link:hover {
+    color: #86cd9f;
+    transition: all 0.3s ease;
+    border-color: #86cd9f;
+}
+
+.nav-links:active {
+    color: #d0d0d0;
+}
+/* all sites - navigation logo hover */
+.logo_hover:hover {
+    -webkit-filter: saturate(1.4);
+    filter: saturate(1.4);
+}
+
+
+/* all sites - menu-right links */
+.menu-right li  {
+    margin-left: 1em;
+}
+/* all sites - nav btn */
+.nav-buttons {
+    padding: 12px 16px;
+    border: 1px solid #fafafa;
+}
+
+/* all sites - Buttons positioning */
+.menu-right {
+    text-align: right;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* all sites - burger btn border */
+.nav-burger-btn  {
+    padding: 13px 16px 11px 16px;
+    border: 1px solid #fafafa;
+}
+
+/* all sites - menu right links colour */
+.nav-buttons:link {
+    color: #fafafa;
+}
+
+/* all sites - menu right btn hover, active, focus */
+.nav-buttons:hover, .nav-burger-btn:hover, .nav-buttons:active, .nav-burger-btn:active {
+    color: #000000;
+    transition: all 0.3s ease;
+    border: 1px solid #fafafa;
+    background-color: #fafafa;
+}
+
+.nav-buttons:focus, .nav-burger-btn:focus {
+    color: #fafafa;
+    border-color: #000000;
+    background-color: #86cd9f;
+}
+
+/* All sites - links Font */
+a {
+    font-family: 'Cabin', sans-serif;
+}
+
+
+/*  ------------- Rules what apply for all Sections of Homepage ------------- */
+/* Backgrounds for the sections */
+main>div:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+main>div:nth-child(even) {
+    background-color: #e9eaea;
+}
+
+/* homepage all section headlines */
+.section-headline {
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 48px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+/* homepage all sections subheadlines */
+.section-subheadline {
+    font-family: 'Cabin', sans-serif;
+    font-size: 36px;
+    color: #3c3c3c;
+}
+
+/* homapage all list item positioning */
+.list-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 90px 0;
+}
+
+/* homepage - view-more-btn */
+button.view-more {
+    font-family: 'Cabin', sans-serif;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 36px;
+}
+
+/* homepage - view-more-btn icon */
+button.view-more i {
+    padding-left: 10px;
+    font-size: 100%;
+}
+/* homepage - view more btn hover */
+.view-more:hover, .testimonial-link:hover {
+    color: #86cd9f;
+    transition: color 0.3s ease;
+    border: none;
+}
+
+/* homepage - view more btn hover focus + active */
+.view-more:focus,
+.view-more:active,
+.testimonial-link:focus,
+.testimonial-link:active{
+    color: #86cd9f;
+    border-bottom: none;
+}
+
+/* homepage - all sections List Items */
+.list-item {
+    flex: 1 0 30%;
+    height: 269px;
+    width: 448px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+    position: relative;
+}
+
+/* homepage - all sections list-item paragraphs */
+.list-item p {
+    margin: 10px 0px 20px 0px;
+    font-family: 'Cabin', sans-serif;
+    font-size: 20px;
+    color: #fafafa;
+}
+
+/* homepage - browse btn for all list items */
+.browse-button {
+    padding: 12px 33px;
+    border-radius: 2px;
+    color: #fafafa;
+    border: none;
+    font-family: "Cabin", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* homepage - browse btn hover */
+.list-item:hover .browse-button {
+    color: #000000;
+    background-color: #fafafa;
+    transition: all 1s ease;
+}
+/* homepage - all list item headlines */
+.list-item h3 {
+    font-family: 'Cabin', sans-serif;
+    font-size: 40px;
+    color: #fafafa;
+}
+
+/* homepage - text dropshadows for list headlines (items) */
+.list-headline, .list-subheadline {
+    text-shadow: 0px 3px 14px rgba(0, 0, 0, 0.84);
+}
+
+/* homepage - margins for list items */
+.list-item:nth-child(-n+3) {
+    margin: 0px 16px 32px 16px;
+}
+
+.list-item:nth-child(n+4) {
+    margin: 0px 16px;
+}
+
+/* -------------  4. Homepage Layout ------------- */
+/* homepage main Content wrapper */
+.content-wrapper {
+    width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 90px 0;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* homepage intro section */
+
+.intro {
+    height: 900px;
+    width: 100%;
+    background-size: cover;
+    background: url(../../assets/images/intro_bg.jpg) center center no-repeat;
+}
+
+.intro .content-wrapper {
+    height: 900px;
+}
+
+/* -------------  5. Homepage Detail ------------- */
+/* home page - intro section headline*/
+.intro-headline {
+    font-size: 89px;
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+    color: #fafafa;
+    text-shadow: 1px 4px 13px rgb(0, 0, 0);
+    padding-bottom: 35px;
+}
+
+/* homepage - intro section subheadline*/
+.intro-subheadline {
+    font-size: 46px;
+    font-family: 'Cabin', sans-serif;
+    color: #fafafa;
+    text-shadow: 1px 2px 7px rgb(0, 0, 0);
+    padding-bottom: 1rem;
+    margin-bottom: 60px;
+}
+
+/* homepage - intro section search input size */
+.search {
+    width: 357px;
+    margin: 4px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* homepage - intro section search input hover */
+.search:hover {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.61);
+    transition: box-shadow 0.2s ease-in 0s;
+}
+
+/* homepage - intro section search input styling */
+.main-search_text{
+    width: 297px;
+    padding: 15px 0 15px 20px;
+    font-size: 16px;
+    font-family: Droid, sans-serif;
+    border: 0 none;
+    height: 52px;
+    margin-right: 0;
+    color: #000000;
+    outline: none;
+    background: #fafafa;
+    float: left;
+    box-sizing: border-box;
+    transition: all 0.15s;
+}
+
+/* homepage - intro section search input text colour fallback */
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #000000;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:#000000;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #000000;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #000000;
+}
+
+
+/* homepage - intro section search btn styling*/
+.main-search_button {
+    border: 0 none;
+    background: #fafafa url("../../assets/images/search_icon.png") center no-repeat;
+    width: 60px;
+    float: left;
+    padding: 0;
+    text-align: center;
+    height: 52px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+/* homepage - intro section search btn hover */
+.main-search_button:hover {
+    background-color: #1f7f5c;
+}
+
+/* homepage - intro section search btn input text */
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #000000;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #000000;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #000000;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #000000;
+}
+
+/* homepage - section search by subject Detail (backgrounds + fake btn styling)*/
+/* homepage - list-item webdesign bg*/
+.list-item-1-1 {
+    background-size: cover;
+    background: url(../../assets/images/webdesign_bg.jpg) center center no-repeat;
+}
+
+ /* homepage - list-item webdesign button colour */
+.list-item-1-1 span {
+    background-color: #fd9b88;
+}
+
+/* homepage - list-item webdev bg*/
+.list-item-1-2 {
+    background-size: cover;
+    background: url(../../assets/images/webdev_bg.jpg) center center no-repeat;
+}
+
+/* homepage - list-item webdev button colour */
+.list-item-1-2 span {
+   background-color: #5c4f6f;
+}
+
+/* homepage - list-item software_dev bg */
+.list-item-1-3 {
+    background-size: cover;
+    background: url(../../assets/images/softdev_bg.jpg) center center no-repeat;
+}
+
+/* homepage - list-item software_dev button colour */
+.list-item-1-3 span {
+   background-color: #fec478;
+}
+
+/* homepage - list-item sec_and_net bg */
+.list-item-1-4 {
+    background-size: cover;
+    background: url(../../assets/images/secandnet_bg.jpg) center center no-repeat;
+}
+
+/* homepage - list-item sec_and_net button colour */
+.list-item-1-4 span {
+   background-color: #5fd6e0;
+}
+
+/* homepage - list-item algo bg */
+.list-item-1-5 {
+    background-size: cover;
+    background: url(../../assets/images/algo_bg.jpg) center center no-repeat;
+}
+/* homepage - list-item algo button colour */
+.list-item-1-5 span {
+   background-color: #202a25;
+}
+
+/* homepage - list-item mob_dev bg */
+.list-item-1-6 {
+    background-size: cover;
+    background: url(../../assets/images/mobdev_bg.jpg) center center no-repeat;
+}
+
+/* homepage - list-item mob_dev button colour */
+.list-item-1-6 span {
+   background-color: #A36F8E;
+}
+
+/* homepage - search by subject list-item hover */
+.search-by-subject .list-item:hover {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.61);
+    transition: box-shadow 0.2s ease-in 0s;
+    background: url(../../assets/images/hover.png) center center no-repeat;
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+}
+
+/* homepage - section how codeventure works Detail */
+.howto .list-wrapper {
+    margin-bottom: 0;
+}
+
+/* homepage - how... items styling */
+.how-list-item {
+    flex: 1 0 30%;
+    height: auto;
+    width: 448px;
+    border-radius: 2px;
+    margin: 0px 10px 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* homepage - article image */
+
+.article-img {
+    border-radius: 2px;
+}
+
+/* homepage - article headline */
+
+.article-headline {
+    font-family: 'Cabin', sans-serif;
+    font-size: 48px;
+    color: #000000;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* homepage - article text */
+
+.article-text {
+    text-align: center;
+    font-size: 26px;
+    font-family: 'Cabin', sans-serif;
+    color: #3c3c3c;
+    line-height: 1.3em;
+    width: 79%;
+    display: flex;
+    margin: 0 auto;
+}
+
+/* homepage - roadmaps section detail */
+
+/* homepage - Roadmaps list */
+.roadmaps .list-headline {
+    text-align: center;
+    font-size: 38px;
+    line-height: 40px;
+    color: #fafafa;
+    text-shadow: 0px 3px 14px rgba(0, 0, 0, 0.84);
+}
+
+/* homepage - Roadmaps list */
+.roadmaps .list-item {
+    height: 250px;
+}
+
+/* homepage - section Roadmaps line-Break for text */
+.line-break {
+    display: block;
+}
+
+/* homepage - roadmap items backgrounds */
+
+/* webesign_bg */
+.list-item-2-1 {
+    background-size: cover;
+    background: url(../../assets/images/webdesigner.jpg) center center no-repeat;
+}
+/* webdev_bg */
+.list-item-2-2 {
+    background-size: cover;
+    background: url(../../assets/images/webdeveloper.jpg) center center no-repeat;
+}
+/* mobdev_bg */
+.list-item-2-3 {
+    background-size: cover;
+    background: url(../../assets/images/mobiledeveloper.jpg) center center no-repeat;
+}
+
+/* homepage - roadmaps hover */
+.roadmaps .list-item:hover {
+    -webkit-box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.16);
+    box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.16);
+    background: url(../../assets/images/road-hover.png) center center no-repeat;
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+}
+
+/* homepage - testimonials section */
+
+/* homepage - background-color testimonials */
+.testimonial-list {
+    background-color: #ffffff;
+    flex: 1 0 30%;
+    height: 250px;
+    width: 460px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* homepage - testimonial list-items hovers */
+.testimonial-list:hover {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.61);
+    transition: box-shadow 0.2s ease-in 0s;
+}
+/* homepage - margins for the items */
+.testimonial-list:nth-child(-n+3) {
+    margin: 0px 16px 32px 16px;
+}
+/* homepage - margins for the items */
+.list-item:nth-child(n+4) {
+    margin: 0px 16px;
+}
+
+/* homepage - testimonial headline */
+.testimonial-headline {
+    font-family: "Droid", sans-serif;
+    color: #000000;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+/* homepage - testimonial text */
+.testimonial-text {
+    color: #3c3c3c;
+    font-size: 26px;
+    font-family: "Cabin", sans-serif;
+    line-height: 1.3em;
+}
+/* homepage - testimonaial link styling */
+.testimonial-link {
+    margin-top: auto;
+    font-family: 'Cabin', sans-serif;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    font-size: 26px;
+    width: auto;
+}
+
+/* homepage - view more icon */
+.testimonial-link i{
+    padding-left: 10px;
+    font-size: 0.8em;
+}
+
+/* homepage - our Partners Detail */
+/* homepage - our partners logos */
+.logo-list-item {
+    padding: 0px 20px;
+}
+
+/* homepage - our partners logos hover */
+.logo-list-item a:hover {
+    transition: all 0.2s ease-in 0s;
+    filter: grayscale(100%);
+}
+
+/* -----------------  landingpage Search Layout -----------------   */
+/* landing search - all content wrapper */
+.wrapper {
+    width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+
+/* landing search - browse courses bg-color */
+.browse-courses-content {
+    background-color: #e9eaea;
+}
+
+/* landing search - aside */
+.aside-content {
+    width: 440px;
+    height: 100%;
+    background-color: #ffffff;
+    padding: 20px 0;
+    font-family: "Cabin", sans-serif;
+    margin: 0px 16px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+}
+/* landing search - aside hover */
+.aside-content:hover {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.61);
+    transition: box-shadow 0.2s ease-in 0s;
+}
+
+/* landing search - main content (for the cards) */
+.main-content {
+    width: 936px;
+    margin: 0px 16px;
+}
+
+/* Landing Search - search area - Detail */
+.search-area {
+    background-size: cover;
+    background: url(../../assets/images/landing-search-bg.jpg) center center no-repeat;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* Landing Search - search area - search input Detail styling */
+.search_text{
+    width: 800px;
+    padding: 15px 0 15px 20px;
+    font-size: 16px;
+    font-family: Droid, sans-serif;
+    border: 0 none;
+    height: 52px;
+    margin-right: 0;
+    color: #000000;
+    outline: none;
+    background: #fafafa;
+    float: left;
+    box-sizing: border-box;
+    transition: all 0.15s;
+}
+/* Landing Search - search area - search input placeholder for dif. vendors.*/
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #000000;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #000000;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #000000;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #000000;
+}
+
+/* Landing Search - search area - search btn Detail */
+.search_button-landing {
+    border: 0 none;
+    background-color: #70BE8A;
+    width: 180px;
+    float: left;
+    padding: 0;
+    text-align: center;
+    height: 52px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    margin-left: 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #fafafa;
+    font-family: "Droid", sans-serif;
+    font-weight: bold;
+}
+
+/* Landing Search - search area - search btn hover */
+.search_button-landing:hover {
+    background-color: #7bc695;
+}
+
+/* Landing Search - aside - Detail */
+/* Landing Search - aside - title */
+.aside-title {
+    text-align: right;
+    padding-right: 20px;
+    text-transform: uppercase;
+}
+/* Landing Search - aside - title filter icon */
+.aside-title i{
+    padding-right: 10px;
+}
+
+/* Landing Search - aside - showing range input results */
+.widget-display {
+    display: flex;
+    justify-content: center;
+}
+/* Landing Search - aside - widget titles for all widgets */
+.widget-title {
+    padding: 20px 0;
+    display: block;
+}
+
+/* Landing Search - aside - all widget */
+.aside-widgets {
+    padding: 0px 20px;
+}
+
+/* Landing Search - aside - all widget labels */
+.widget-labels {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+/* Landing Search - aside - range input */
+.widget-range {
+     padding-bottom: 20px;
+}
+
+
+/* Landing Search - aside - range display (output) colour */
+
+output.range-output {
+    color: #7bc695;
+}
+
+/* Landing Search - aside - range display (output) € sign */
+.range-output::after {
+    content:" €";
+}
+
+/* Landing Search - aside - range detailed styling */
+input[type=range] {
+  -webkit-appearance: none;
+  width: 400px    ;
+  margin: 6.8px 0;
+}
+/* Landing Search - aside - range focus */
+input[type=range]:focus {
+  outline: none;
+}
+
+/* Landing Search - aside - range track */
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 11.4px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: rgba(193, 193, 193, 0.78);
+  border-radius: 2px;
+  border: 0px solid #010101;
+}
+/* Landing Search - aside - range thumb */
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000031, 0px 0px 0px #00004b;
+  border: 0px solid rgba(0, 0, 0, 0);
+  height: 25px;
+  width: 25px;
+  border-radius: 15px;
+  background: #7bc695;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -6.8px;
+}
+/* Landing Search - aside - range track colour */
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: rgba(206, 206, 206, 0.78);
+}
+/* Landing Search - aside - range track mozilla styling */
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 11.4px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: rgba(193, 193, 193, 0.78);
+  border-radius: 2px;
+  border: 0px solid #010101;
+}
+/* Landing Search - aside - range thumb mozilla styling */
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000031, 0px 0px 0px #00004b;
+  border: 0px solid rgba(0, 0, 0, 0);
+  height: 25px;
+  width: 25px;
+  border-radius: 15px;
+  background: #7bc695;
+  cursor: pointer;
+}
+/* Landing Search - aside - more specific stuff dont mess with this! */
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 11.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: rgba(180, 180, 180, 0.78);
+  border: 0px solid #010101;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: rgba(193, 193, 193, 0.78);
+  border: 0px solid #010101;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0px 0px 0px #000031, 0px 0px 0px #00004b;
+  border: 0px solid rgba(0, 0, 0, 0);
+  height: 25px;
+  width: 25px;
+  border-radius: 15px;
+  background: #7bc695;
+  cursor: pointer;
+  height: 11.4px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: rgba(193, 193, 193, 0.78);
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: rgba(206, 206, 206, 0.78);
+}
+
+/* Landing Search - aside - hearts widget */
+.widget-hearts-list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Landing Search - aside - hearts widget hover */
+.widget-hearts-items:hover,.widget-hearts-items:active {
+    -webkit-filter: saturate(8);
+    filter: saturate(8);
+}
+
+/* Landing Search - aside - Rules for all selects (dropdown) */
+ .select-dropdown {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid #88cca0;
+    border-radius: 2px;
+    font-size: 1em;
+    width: 100%;
+    height: 60px;
+    padding:.75em 1em .5em 1em;
+    background: url("../../assets/images/arrow_down.png") center center no-repeat;
+    background-position: 96% 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    outline: none;
+    cursor: pointer;
+ }
+/* Landing Search - aside - Rules for all selects (dropdown) hover */
+.select-dropdown:hover {
+    background-color: #fafafa;
+}
+
+/* Landing Search - aside - btn wrapper */
+.aside-btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* Landing Search - aside - reset btn */
+.aside-btn {
+	background-color:#fafafa;
+	border:1px solid #7bc695;
+	display:inline-block;
+	cursor:pointer;
+	color:#7bc695;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+    padding: 20px;
+    margin: 20px 10px 0px 10px;
+    outline: none;
+    text-transform: uppercase;
+    border-radius: 2px;
+ }
+
+/* Landing Search - aside - btn hover */
+.aside-btn:hover {
+	background-color:#7bc695;
+    color: #fafafa;
+}
+/* Landing Search - aside - btn active */
+.aside-btn:active {
+	position:relative;
+	top:1px;
+}
+
+/* Landing Search - aside - submit btn detailed styling */
+.aside-btn[type="submit"] {
+	background-color: #70BE8A;
+	border: 1px solid #7bc695;
+	display:inline-block;
+	cursor:pointer;
+	-webkit-column-rule: #fafafa;
+	-moz-column-rule: #fafafa;
+	-o-column-rule: #fafafa;
+	column-rule: #fafafa;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+    padding: 20px 52px;
+    margin: 20px 10px 0px 10px;
+    color: #fafafa;
+ }
+
+/* Landing Search - aside - submit btn hover */
+ .aside-btn[type="submit"]:hover {
+ 	background-color:#7bc695;
+    border: 1px solid #7bc695;
+     color: #fafafa;
+  }
+
+
+/* Landing Search - main-content (Cards) - Layout */
+/* Landing Search - main (Cards) - card wrapper */
+.card-wrapper {
+    background-color: #ffffff;
+    width: 936px;
+    height: 394px;
+    padding: 20px;
+    display: flex;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+    margin-bottom: 30px;
+}
+/* Landing Search - main (Cards) - card hover */
+.card-wrapper:hover {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.61);
+    transition: box-shadow 0.2s ease-in 0s;
+}
+
+/* Landing Search - main (Cards) - card image left */
+.card-image{
+    margin-right: 20px;
+    width: 354px;
+    height: 354px;
+}
+
+/* Landing Search - main (Cards) - text-area */
+.card-textarea {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/* Landing Search - main (Cards) - categorys */
+.card-category {
+    color: #ff7261;
+    font-family: "Droid", sans-serif;
+    font-size: 20px;
+
+}
+
+/* Landing Search - main (Cards) - Detail */
+/* Landing Search - main (Cards) - card header*/
+.card-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+/* Landing Search - main (Cards) - card header */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+/* Landing Search - main (Cards) - card hearts */
+.card-hearts {
+    display: flex;
+    color: #fc4d4d;
+}
+
+/* Landing Search - main (Cards) - card hearts item */
+.heart {
+    padding-left: 8px;
+}
+
+/* Landing Search - main (Cards) - card body  */
+.card-body-header {
+}
+
+/* Landing Search - main (Cards) - card headline  */
+.card-headline {
+    font-size: 30px;
+    font-family: "Cabin", sans-serif;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Landing Search - main (Cards) - card txt  */
+.card-main-text {
+    width: 400px;
+    font-size: 20px;
+    font-family: "Cabin", sans-serif;
+    line-height: 32px;
+}
+
+/* Landing Search - main (Cards) - card information */
+.card-information {
+    display: flex;
+}
+
+/* Landing Search - main (Cards) - card left side */
+.card-info-left {
+    display: flex;
+    flex: 1 0 50%;
+}
+
+/* Landing Search - main (Cards) - card left items  */
+.card-info-left > ul {
+    margin-right: 50px;
+    font-family: "Cabin", sans-serif;
+    font-size: 20px;
+}
+
+/* Landing Search - main (Cards) - card left items spacing */
+.card-info-left > ul li:nth-child(2) {
+    margin: 20px 0px;
+}
+
+/* Landing Search - main (Cards) - card left icon spacing (IMG) */
+.card-info-left img {
+    margin-right: 7px;
+}
+/* Landing Search - main (Cards) - card left icon spacing (i) */
+.card-info-left i {
+    margin-right: 7px;
+}
+
+/* Landing Search - main (Cards) - card right */
+.card-info-right {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+/* Landing Search - main (Cards) - card link (looks like a btn) */
+.card-link {
+    background-color:#70BE8A;
+    display: inline-block;
+    cursor:pointer;
+    color:#fafafa;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    text-decoration:none;
+    padding: 20px 20px;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+/* Landing Search - main (Cards) - card link (looks like a btn) */
+.card-link:hover {
+    background-color:#7bc695;
+}
+/* -----------------  landingpage Contact -----------------   */
+/* -----------------  landingpage Contact Layout -----------------   */
+
+/* Landing Contact - wrapper (main) */
+.contact-main {
+    background: #000000 url(../../assets/images/contact_bg.jpg) center center no-repeat;
+    background-size: cover;
+    padding: 50px;
+}
+
+/* Landing Contact - form */
+.contact-form {
+    width: 720px;
+    margin: 0 auto;
+    display: flex;
+    height: auto;
+    flex-wrap: wrap;
+    padding: 20px 20px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+    background-color: #fafafa;
+}
+
+/* Landing Contact - form hover */
+.contact-form:hover {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.61);
+    transition: box-shadow 0.2s ease-in 0s;
+}
+
+/* -----------------  landingpage Contact Detail -----------------   */
+/* Landing Contact - headline */
+.contact-headline {
+    font-size: 48px;
+    font-family: "Cabin", sans-serif;
+    text-align: center;
+    color: #fafafa;
+    text-shadow: 0px 3px 14px rgba(0, 0, 0, 0.84);
+    margin-bottom: 50px;
+}
+
+/* Landing Contact - form headline */
+.form_headline {
+    font-size: 26px;
+    font-family: 'Cabin', sans-serif;
+    color: #3c3c3c;
+    line-height: 1.3em;
+    padding-bottom: 20px;
+}
+/* Landing Contact - form input and textarea styling and margins */
+.contact-form input, .contact-form textarea{
+    width: 100%;
+    padding: 20px;
+    font-family: "Droid", sans-serif;
+    border-radius: 2px;
+    border: 1px solid #7bc695;
+    margin-bottom: 20px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Landing Contact - form input + submit btn bottom space */
+.contact-form_submit {
+
+}
+
+/* Landing Contact - form input + textarea hovers  */
+.contact-form input:hover, textarea:hover{
+
+
+}
+
+/* Landing Contact - form submit btn */
+.contact-submit {
+    background-color:#7bc695;
+    text-transform: uppercase;
+    color: #fafafa;
+}
+/* Landing Contact - form submit btn hover */
+.contact-submit:hover{
+    background-color: #1f7f5c;
+    border: 1px solid  #1f7f5c;
+    transition: all 0.2s ease-in 0s;
+    color: #fafafa;
+}
+
+/* -----------------  landingpage under construction -----------------   */
+
+/* Landing under-construction - Layout */
+.uc {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* Landing under-construction - Detail  */
+/* Landing under-construction - headlines + subheadlines  */
+.uc-headline, .uc-subheadline {
+  font-family: monospace;
+  text-transform: uppercase;
+  border: 5px solid #000;
+  padding: 0.5em;
+  color: #000;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  margin: 30px 0px;
+}
+/* Landing under-construction - link styles  */
+.uc-links {
+    color: #000;
+    font-size: 50px;
+    text-decoration: underline;
+    margin: 10px;
+    font-family: monospace;
+    text-transform: uppercase;
+}
+
+/* Landing under-construction - link hovers */
+.uc-links:hover{
+    color: #1f7f5c;
+}

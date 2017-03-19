@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>codeventure.com</title>
+    <meta name="description" content="codeventure.com: is a awesome website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="https://use.fontawesome.com/090d8959e6.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-wrapper">
+            <nav class="menu">
+                <div class="menu-item menu-left">
+                    <a class="logo_hover" href="../index.html"><img src="../assets/images/codeventure_logo.png" alt="logo"></a>
+                </div>
+                <ul class="menu-item menu-center">
+                    <li><a href="../index.html" class="nav-links">home</a></li>
+                    <li><a href="search.html" class="nav-links current">detailed search</a></li>
+                    <li><a href="underconstruction.html" class="nav-links">guidelines</a></li>
+                </ul>
+                <ul class="menu-item menu-right">
+                    <li><a href="#" class="nav-buttons">sign up</a></li>
+                    <li><a href="#" class="nav-buttons">log in</a></li>
+                    <li><a href="#" class="nav-burger-btn"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="search-area">
+                <form action="#" method="get">
+                    <input type="text" name="search_text" class="search_text" placeholder="Search for Software or Skill...">
+                    <input type="submit" name="search_button" class="search_button-landing" value="search">
+                </form>
+        </div>
+    </header>
+    <div class="browse-courses-content">
+        <div class="wrapper">
+            <aside class="aside-content">
+                <h3 class="aside-title"><i class="fa fa-filter" aria-hidden="true"></i>filter</h3>
+                <form action="formularscript.php" method="post">
+                    <fieldset class="aside-widgets widget-range">
+                        <label class="widget-title">Price</label>
+                        <ul class="widget-display">
+                            <li>
+                                <output class="range-output" name="price-display" id="Output">99 </output>
+                            </li>
+                        </ul>
+                        <div class="widget-item">
+                            <ul class="widget-labels">
+                                <li class="range-min">
+                                    <p class="widget-label">0 €</p>
+                                </li>
+                                <li class="range-max">
+                                    <p class="widget-label">500 €</p>
+                                </li>
+                            </ul>
+                            <input class="widget-display" type="range" name="price-range" id="Input" value="99" min="1" max="500" oninput="Output.value = Input.value">
+                        </div>
+                    </fieldset>
+                    <fieldset class="aside-widgets widget-hearts">
+                        <label class="widget-title">Hearts</label>
+                        <ul class="widget-hearts-list">
+                            <li class="widget-hearts-items">
+                                <input type="image" name="image" src="../assets/images/aside_1-heart.png" width="70" height="70" alt="one heart category selection">
+                            </li>
+                            <li class="widget-hearts-items">
+                                <input type="image" name="image" src="../assets/images/aside_2-heart.png" width="70" height="70" alt="two hearts category selection">
+                            </li>
+                            <li class="widget-hearts-items">
+                                <input type="image" name="image" src="../assets/images/aside_3-heart.png" width="70" height="70" alt="three hearts category selection">
+                            </li>
+                            <li class="widget-hearts-items">
+                                <input type="image" name="image" src="../assets/images/aside_4-heart.png" width="70" height="70" alt="four hearts category selection">
+                            </li>
+                            <li class="widget-hearts-items">
+                                <input type="image" name="image" src="../assets/images/aside_5-heart.png" width="70" height="70" alt="Five hearts category selection">
+                            </li>
+                        </ul>
+                    </fieldset>
+
+                    <fieldset class="aside-widgets widget-sort_by-subject">
+                        <label for="subject-select" class="widget-title">Sort by: Subject</label>
+                        <select class="select-dropdown" id="subject-select">
+                            <option value="webdesign">
+                                Web Design
+                            </option>
+                            <option value="webdev">
+                                Web Development
+                            </option>
+                            <option value="softdev">
+                                Software Development
+                            </option>
+                            <option value="Algorithms">
+                                Algorithms
+                            </option>
+                            <option value="mobdev">
+                                Mobile Development
+                            </option>
+                        </select>
+                    </fieldset>
+
+
+                    <fieldset class="aside-widgets widget-sort_by-subject">
+                        <label for="interest-select" class="widget-title">Sort by: Interest</label>
+                        <select class="select-dropdown" id="interest-select">
+                            <option value="webdesign">
+                                Getting Started
+                            </option>
+                            <option value="webdev">
+                                lorem ipsum
+                            </option>
+                            <option value="softdev">
+                                lorem ipsum
+                            </option>
+                            <option value="Algorithms">
+                                lorem ipsum
+                            </option>
+                            <option value="mobdev">
+                                lorem ipsum
+                            </option>
+                        </select>
+                    </fieldset>
+
+
+                    <fieldset class="aside-widgets widget-sort_by-subject">
+                        <label for="date-select" class="widget-title">Sort by: Date</label>
+                        <select class="select-dropdown" id="date-select">
+                            <option value="webdesign">
+                                Release date (newest first)
+                            </option>
+                            <option value="webdev">
+                                lorem ipsum
+                            </option>
+                            <option value="softdev">
+                                lorem ipsum
+                            </option>
+                            <option value="Algorithms">
+                                lorem ipsum
+                            </option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset class="aside-widgets widget-sort_by-subject">
+                        <label for="lang-select" class="widget-title">Sort by: Language</label>
+                        <select class="select-dropdown" id="lang-select">
+                            <option value="webdesign">
+                                English
+                            </option>
+                            <option value="webdev">
+                                German
+                            </option>
+                            <option value="softdev">
+                                Spanish
+                            </option>
+                        </select>
+                    </fieldset>
+                    <div class="aside-btn-wrapper">
+                        <button type="reset" class="aside-btn">Reset all
+                     filters</button>
+                        <input type="submit" name="aside-submit" class="aside-btn" value="Search">
+                    </div>
+                </form>
+            </aside>
+
+            <main class="main-content">
+
+                <article class="card-wrapper">
+                    <div class="card-image">
+                        <img src="../assets/images/article_card-image_webdesign.jpg" alt=" Picture of a Computer" width="354" height="354">
+                    </div>
+
+                    <div class="card-textarea">
+                        <ul class="card-header">
+                            <li>
+                                <h3 class="card-category">Webdesign</h3></li>
+                            <li>
+                                <ul class="card-hearts">
+                                    <li class="heart"><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                    <li class="heart"><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                    <li class="heart"><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="card-body">
+
+                            <div class="card-body-header">
+                                <h2 class="card-headline">HTML and CSS</h2>
+                                <p class="card-main-text">Build some cool Websites bla bla with HTML 5 and CSS3, Lorem Ipsum Amet deli Gama delta rem dolor, more lorem dolor bla bli blu,</p>
+                            </div>
+
+                            <div class="card-information">
+                                <div class="card-info-left">
+                                    <ul>
+                                        <li>
+                                            <img src="../assets/images/codeavengers_icon.png" alt="code avenger logo" width="17" height="19"> Code Avengers
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-money" aria-hidden="true"></i> Free
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-users" aria-hidden="true"></i> 1.259
+                                        </li>
+                                    </ul>
+
+
+
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-globe" aria-hidden="true"></i> English
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i> Hours 40
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-calendar-o" aria-hidden="true"></i> 25.09.16
+                                        </li>
+                                    </ul>
+
+                                </div>
+                                <div class="card-info-right">
+                                    <a class="card-link" href="#">go to course</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-wrapper">
+                    <div class="card-image">
+                        <img src="../assets/images/article_card-image_webdesign_2.jpg" alt=" Picture of a Computer" width="354" height="354">
+                    </div>
+
+                    <div class="card-textarea">
+                        <ul class="card-header">
+                            <li>
+                                <h3 class="card-category">Webdesign</h3></li>
+                            <li>
+                                <ul class="card-hearts">
+                                    <li class="heart"><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                    <li class="heart"><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                    <li class="heart"><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="card-body">
+
+                            <div class="card-body-header">
+                                <h2 class="card-headline">HTML and CSS</h2>
+                                <p class="card-main-text">Build some cool Websites bla bla with HTML 5 and CSS3, Lorem Ipsum Amet deli Gama delta rem dolor, more lorem dolor bla bli blu,</p>
+                            </div>
+
+                            <div class="card-information">
+                                <div class="card-info-left">
+                                    <ul>
+                                        <li>
+                                            <img src="../assets/images/codeavengers_icon.png" alt="code avenger logo" width="17" height="19"> Code Avengers
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-money" aria-hidden="true"></i> Free
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-users" aria-hidden="true"></i> 1.259
+                                        </li>
+                                    </ul>
+
+
+
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-globe" aria-hidden="true"></i> English
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i> Hours 40
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-calendar-o" aria-hidden="true"></i> 25.09.16
+                                        </li>
+                                    </ul>
+
+                                </div>
+                                <div class="card-info-right">
+                                    <a class="card-link" href="#">go to course</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-wrapper">
+                    <div class="card-image">
+                        <img src="../assets/images/article_card-image_webdesign_3.jpg" alt=" Picture of a Computer" width="354" height="354">
+                    </div>
+
+                    <div class="card-textarea">
+
+                        <ul class="card-header">
+                            <li>
+                                <h3 class="card-category">Webdesign</h3></li>
+                            <li>
+                                <ul class="card-hearts">
+                                    <li class="heart"><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                    <li class="heart"><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                    <li class="heart"><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="card-body">
+
+                            <div class="card-body-header">
+                                <h2 class="card-headline">HTML and CSS</h2>
+                                <p class="card-main-text">Build some cool Websites bla bla with HTML 5 and CSS3, Lorem Ipsum Amet deli Gama delta rem dolor, more lorem dolor bla bli blu,</p>
+                            </div>
+
+                            <div class="card-information">
+                                <div class="card-info-left">
+                                    <ul>
+                                        <li>
+                                            <img src="../assets/images/codeavengers_icon.png" alt="code avenger logo" width="17" height="19"> Code Avengers
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-money" aria-hidden="true"></i> Free
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-users" aria-hidden="true"></i> 1.259
+                                        </li>
+                                    </ul>
+
+
+
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-globe" aria-hidden="true"></i> English
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i> Hours 40
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-calendar-o" aria-hidden="true"></i> 25.09.16
+                                        </li>
+                                    </ul>
+
+                                </div>
+                                <div class="card-info-right">
+                                    <a class="card-link" href="#">go to course</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </main>
+        </div>
+        <!--Wrapper-->
+    </div>
+
+
+    <footer class="footer">
+        <ul class="footer-list">
+            <li class="footer-headline">
+                <h4>connect</h4>
+            </li>
+            <li class="footer-link">
+                <a href="#">Facebook</a>
+            </li>
+            <li class="footer-link">
+                <a href="#">LinkedIn</a>
+            </li>
+            <li class="footer-link">
+                <a href="#">Twitter</a>
+            </li>
+            <li class="footer-link">
+                <a href="#">Google+</a>
+            </li>
+        </ul>
+        <ul class="footer-list">
+            <li class="footer-headline">
+                <h4>codeventure</h4>
+            </li>
+            <li class="footer-link">
+                <a href="#">About us</a>
+            </li>
+            <li class="footer-link">
+                <a href="#">Guidelines</a>
+            </li>
+            <li class="footer-link">
+                <a href="#">Search</a>
+            </li>
+        </ul>
+        <ul class="footer-list">
+            <li class="footer-headline">
+                <h4>Community</h4>
+            </li>
+            <li class="footer-link">
+                <a href="#">Partners</a>
+            </li>
+            <li class="footer-link">
+                <a href="#">Beta Testers</a>
+            </li>
+            <li class="footer-link">
+                <a href="#">Search</a>
+            </li>
+        </ul>
+        <ul class="footer-list">
+            <li class="footer-headline">
+                <h4>more</h4>
+            </li>
+            <li class="footer-link">
+                <a href="#">Terms</a>
+            </li>
+            <li class="footer-link">
+                <a href="#">Privacy</a>
+            </li>
+            <li class="footer-link">
+                <a href="contact.html">Contact us</a>
+            </li>
+            <li class="footer-link">
+                <a href="#">Sitemap</a>
+            </li>
+        </ul>
+        <p>Copyright &copy; codeventure.com 2016. All rights reserved.</p>
+    </footer>
+</body>
+</html>
